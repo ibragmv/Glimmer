@@ -1,4 +1,3 @@
-```markdown
 # Glimmer | Multi-Tenant E-Commerce Platform
 
 Glimmer is a modern, high-performance e-commerce platform built with Next.js 15, Payload CMS, and Stripe. It features a robust multi-tenant architecture with support for vendor subdomains and automatic platform fees.
@@ -154,4 +153,3 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## License
 
 This project is licensed under the MIT License.
-```
