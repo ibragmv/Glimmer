@@ -18,7 +18,7 @@ export const Tenants: CollectionConfig = {
       type: "text",
       label: "Store Name",
       admin: {
-        description: "This is the name of the store (e.g. Antonio's Store)",
+        description: "This is the name of the store (e.g. Ibragmv's Store)",
       },
     },
     {
@@ -32,7 +32,7 @@ export const Tenants: CollectionConfig = {
       },
       admin: {
         description:
-          "This is the subdomain for the store (e.g. [slug].funroad.com)",
+          "This is the subdomain for the store (e.g. [slug].glimmer.com)",
       },
     },
     {

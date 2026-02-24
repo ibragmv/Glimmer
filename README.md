@@ -1,33 +1,30 @@
-# Multi-Tenant E-Commerce with Platform Fees
+```markdown
+# Glimmer | Multi-Tenant E-Commerce Platform
 
-![7](https://github.com/user-attachments/assets/cc429a6b-ae9a-43d1-ac22-15a15cc4955a)
-
-A modern e-commerce platform built with Next.js, Payload CMS, and Stripe, featuring multi-tenant architecture and platform fees capabilities.
+Glimmer is a modern, high-performance e-commerce platform built with Next.js 15, Payload CMS, and Stripe. It features a robust multi-tenant architecture with support for vendor subdomains and automatic platform fees.
 
 ## Features
 
-- 🏬 Multi-tenant architecture
-- 🌐 Vendor subdomains
-- 🎨 Custom merchant storefronts
-- 💳 Stripe Connect integration
-- 💰 Automatic platform fees
-- ⭐ Product ratings & reviews
-- 📚 User purchase library
-- 🧑‍💼 Role-based access control
-- 🛠️ Admin dashboard
-- 🧾 Merchant dashboard
-- 🧱 Payload CMS backend
-- 🗂️ Category & product filtering
-- 🔍 Search functionality
-- 🖼️ Image upload support
-- ⚙️ Built with Next.js 15
-- 🎨 TailwindCSS V4 styling
-- 💅 ShadcnUI components
+- 🏬 **Multi-tenant architecture**: Host multiple independent stores on a single instance.
+- 🌐 **Vendor subdomains**: Support for custom subdomains (e.g., `store.glimmer.com`).
+- 🎨 **Custom merchant storefronts**: Unique branding for every vendor.
+- 💳 **Stripe Connect integration**: Seamless onboarding for sellers.
+- 💰 **Automatic platform fees**: Monetize your platform by taking a cut of every sale.
+- ⭐ **Product ratings & reviews**: Built-in social proof system.
+- 📚 **User purchase library**: Digital products and order history management.
+- 🧑‍💼 **Role-based access control**: Admin, Merchant, and Customer roles.
+- 🛠️ **Admin dashboard**: Global platform management.
+- 🧾 **Merchant dashboard**: Specialized tools for vendors to manage products and sales.
+- 🧱 **Payload CMS backend**: Type-safe, headless content management.
+- 🔍 **Search & Filtering**: Advanced category and product discovery.
+- 🖼️ **Image upload support**: Integrated media management.
+- ⚙️ **Modern Stack**: Built with Next.js 15 and TailwindCSS V4.
+- 💅 **ShadcnUI components**: Beautifully designed, accessible UI components.
 
 ## Prerequisites
 
 - Node.js 18+ or Bun 1.0+
-- MongoDB Atlas account
+- MongoDB Atlas account (or local MongoDB)
 - Stripe account
 - Vercel account (for Blob storage)
 
@@ -39,8 +36,8 @@ A modern e-commerce platform built with Next.js, Payload CMS, and Stripe, featur
 
 ```bash
 # Clone the repository
-git clone https://github.com/code-with-antonio/next15-multitenant-ecommerce.git
-cd multitenant-ecommerce
+git clone https://github.com/ibragmv/Glimmer.git
+cd Glimmer
 
 # Install dependencies
 bun install
@@ -53,8 +50,8 @@ cp .env.example .env
 
 ```bash
 # Clone the repository
-git clone https://github.com/code-with-antonio/next15-multitenant-ecommerce.git
-cd multitenant-ecommerce
+git clone https://github.com/ibragmv/Glimmer.git
+cd Glimmer
 
 # Install dependencies
 npm install
@@ -67,8 +64,8 @@ cp .env.example .env
 
 ```bash
 # Clone the repository
-git clone https://github.com/code-with-antonio/next15-multitenant-ecommerce.git
-cd multitenant-ecommerce
+git clone https://github.com/ibragmv/Glimmer.git
+cd Glimmer
 
 # Install dependencies
 yarn install
@@ -101,10 +98,10 @@ BLOB_READ_WRITE_TOKEN=your_vercel_blob_token
 
 ### Subdomain Routing Configuration
 
-The platform supports wildcard subdomain routing, allowing each vendor to have their own unique subdomain (e.g., `vendorname.yourdomain.com`). This feature is controlled by the `NEXT_PUBLIC_ENABLE_SUBDOMAIN_ROUTING` environment variable.
+Glimmer supports wildcard subdomain routing, allowing each vendor to have their own unique subdomain.
 
 #### Development
-By default, subdomain routing is disabled in development (`NEXT_PUBLIC_ENABLE_SUBDOMAIN_ROUTING="false"`), and all stores are accessed through routes like:
+By default, subdomain routing is disabled in development (`NEXT_PUBLIC_ENABLE_SUBDOMAIN_ROUTING="false"`). Stores are accessed via:
 ```
 http://localhost:3000/tenants/[tenant-slug]
 ```
@@ -112,59 +109,37 @@ http://localhost:3000/tenants/[tenant-slug]
 #### Production
 To enable subdomain routing in production:
 
-1. Configure your DNS provider with a wildcard subdomain record:
+1. Configure your DNS provider with a wildcard record:
    ```
    *.yourdomain.com  →  your-vercel-deployment.vercel.app
    ```
 
-2. Update your environment variables:
+2. Update environment variables:
    ```env
    NEXT_PUBLIC_ROOT_DOMAIN=yourdomain.com
    NEXT_PUBLIC_ENABLE_SUBDOMAIN_ROUTING="true"
    ```
 
-Once enabled, stores will be accessible through their unique subdomains:
+Once enabled, stores will be accessible at:
 ```
 https://tenantslug.yourdomain.com
 ```
 
-#### Notes
-- Make sure your hosting provider (e.g., Vercel) supports wildcard subdomains
-- Each subdomain will automatically serve the corresponding store's content
-- SSL certificates should be configured to support wildcard subdomains
-- The main marketplace will remain accessible at your root domain
-
 ### Database Setup
 
 ```bash
-# Using Bun
+# Reset and seed the database (Careful: this deletes existing data)
 bun run db:fresh
 bun run db:seed
-
-# Using npm
-npm run db:fresh
-npm run db:seed
-
-# Using yarn
-yarn db:fresh
-yarn db:seed
 ```
 
 ### Development
 
 ```bash
-# Using Bun
 bun run dev
-
-# Using npm
-npm run dev
-
-# Using yarn
-yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
 
 ## Available Scripts
 
@@ -175,3 +150,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - `generate:types` - Generate Payload CMS types
 - `db:fresh` - Reset and migrate database
 - `db:seed` - Seed database with initial data
+
+## License
+
+This project is licensed under the MIT License.
+```

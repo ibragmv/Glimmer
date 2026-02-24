@@ -55,7 +55,7 @@ export const useCartStore = create<CartState>()(
         }),
     }),
     {
-      name: "funroad-cart",
+      name: "glimmer-cart",
       storage: createJSONStorage(() => localStorage),
     },
   ),
